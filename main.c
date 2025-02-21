@@ -1,6 +1,7 @@
 #define _GNU_SOURCE
 
 #include "./functions/usr.c"
+#include "./functions/prcs.c"
 #include <getopt.h>
 
 
@@ -31,7 +32,8 @@ int main(int argc, char* argv[])
                 break;
             }
             case 'p':
-
+                show_processes_list();
+                break;
         }
     }
 }
