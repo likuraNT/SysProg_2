@@ -1,13 +1,11 @@
-#include "../headers/usr.h"
-#include <stdio.h>
-#include <unistd.h>
+#include "usr.h"
 
-void show_user_list(void)
+void show_user_list(FILE* out, FILE* err)
 {
     struct passwd *pw;
     while ( (pw = getpwent()) != NULL)
     {
-        fprintf(stdout, "%s:  %s\n", pw->pw_name, pw->pw_dir);
+        fprintf(out, "%s:  %s\n", pw->pw_name, pw->pw_dir);
     }
     endpwent();
 }
